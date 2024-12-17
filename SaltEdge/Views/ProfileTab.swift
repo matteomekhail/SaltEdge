@@ -22,7 +22,6 @@ struct ProfileTab: View {
                     
                     // Profile Info
                     VStack(spacing: AppTheme.standardSpacing) {
-                        infoRow(icon: "calendar", title: "Member since", value: authVM.currentUser?.createdAt.formatted() ?? "")
                         infoRow(icon: "envelope.fill", title: "Email", value: authVM.currentUser?.email ?? "")
                     }
                     .padding()

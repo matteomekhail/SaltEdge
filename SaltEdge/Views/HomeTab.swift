@@ -3,6 +3,7 @@ import SwiftUI
 struct HomeTab: View {
     @EnvironmentObject var authVM: AuthViewModel
     @State private var showComingSoon = false
+    @State private var showBankConnection = false
     
     var body: some View {
         NavigationView {
@@ -17,8 +18,8 @@ struct HomeTab: View {
                 .padding()
             }
             .navigationTitle("Dashboard")
-            .sheet(isPresented: $showComingSoon) {
-                ComingSoonView()
+            .sheet(isPresented: $showBankConnection) {
+                BankConnectionView()
             }
         }
     }
@@ -56,7 +57,7 @@ struct HomeTab: View {
                 .padding(.horizontal)
             
             Button(action: {
-                showComingSoon = true
+                showBankConnection = true
             }) {
                 HStack {
                     Image(systemName: "plus.circle.fill")
